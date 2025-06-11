@@ -16,7 +16,6 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'chiel92/vim-autoformat'
 Plug 'tpope/vim-sensible'
-Plug 'ericbn/vim-solarized'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'kien/ctrlp.vim'
@@ -26,14 +25,17 @@ Plug 'townk/vim-autoclose'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 't9md/vim-choosewin'
 Plug 'pangloss/vim-javascript'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
-
-let g:airline_theme='solarized'
+set background=dark
+colorscheme onedark
+syntax on
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled = 1
 "let g:NERDTreeUseSimpleIndicator = 1
 
-highlight! EndOfBuffer ctermbg=white ctermfg=white guibg=white guifg=white
+
 
 "Syntastic conf
 set statusline+=%#warningmsg#
@@ -56,8 +58,6 @@ let g:choosewin_overlay_enable = 1
 let g:AutoClosePreserveDotReg = 0
 set nocompatible
 "filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 let g:codi#width = 50.0
 set number
 set numberwidth=2
@@ -70,13 +70,11 @@ set mouse=a
 set encoding=UTF-8
 let python_highlight_all=1
 syntax enable
-set background=light
 filetype plugin indent on
 
 "Nerdtree on vim folder
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-colorscheme solarized
 let g:airline_powerline_fonts = 1
 
 "Tab Settings
@@ -141,4 +139,3 @@ set splitbelow splitright
 
 "Find in open project
 set path=.,,**
-
